@@ -1,0 +1,42 @@
+.star-wars {
+	background: url('../img/stars-bg.jpg') no-repeat center center;
+	color: #ff6;
+	text-align: center;
+}
+
+.intro {
+	width: 300px;
+}
+
+.wrapper {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.center-pills {
+	display: inline-block;
+}
+
+.list {
+	text-align: center;
+}
+
+.hero {
+	display: inline-block;
+	width: 200px;
+	margin: 10px;
+	border: 1px solid lightgray;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.hero:hover {
+	border: 1px solid #ed1b2f;
+	cursor: pointer;
+}
+
+.table td {
+	border: 1px solid lightgray;
+	text-align: left;
+	width: 50%;
+}
