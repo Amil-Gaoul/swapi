@@ -18,11 +18,13 @@
 			<li ng-class='{active:swapi.tab==="all"}'><a ng-click="swapi.setGender('all')" href>Все</a></li>
 			<li ng-class='{active:swapi.tab==="male"}'><a ng-click="swapi.setGender('male')" href>Male</a></li>
 			<li ng-class='{active:swapi.tab==="female"}'><a ng-click="swapi.setGender('female')" href>Female</a></li>
+			<li nk-class='{active:swapi.tab==="hermaphrodite"'><a ng-click="swapi.setGender('hermaphrodite')" href>Hermaphrodite</a></li>
 			<li ng-class='{active:swapi.tab==="n/a"}'><a ng-click="swapi.setGender('n/a')" href>Other</a></li>
 		</ul>
 		<div class="row list">
 			<div class="hero" ng-repeat="people in swapi.peoples" ng-show="swapi.isSelected('{{people.gender}}')" ng-click="swapi.clickPeople($index)">
 				<p><strong>Name</strong> - {{people.name}}</p>
+				<!-- <img class="image__small" ng-src"{{people.image}}"> -->
 				<p><strong>Gender</strong> - {{people.gender}}</p>
 			</div>
 			<swapi-people></swapi-people>

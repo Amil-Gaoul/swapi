@@ -40,3 +40,12 @@
 	text-align: left;
 	width: 50%;
 }
+
+.image {
+	width: 300px;
+	margin-bottom: 5px;
+}
+
+.image__small {
+	width: 180px;
+}
