@@ -54,12 +54,21 @@
 
 		swapi.tab = 'all';
 
+		// swapi.setGender = function(gender) {
+		// 		swapi.gender = getGender;
+		// 	}
+		// };
+
+		// swapi.isSelected = function(check){
+		// 	return store.gender === check?"active":"";
+		// };
+
 		swapi.setGender = function(setTab) {
 			swapi.tab = setTab;
 		};
 
 		swapi.isSelected = function(selected) {
-			return ((swapi.tab === 'all' && swapi.tab !== 'male' && swapi.tab !== 'female' && swapi.tab !== 'n/a' && swapi.tab !== 'hermaphrodite') || (selected === swapi.tab))?true:false;
+			return ((swapi.tab === 'all' && swapi.tab !== 'male' && swapi.tab !== 'female' && swapi.tab !== 'n/a') || (selected === swapi.tab))?true:false;
 		};
 
 		swapi.clickPeople = function(ind) {
@@ -68,5 +77,27 @@
 			$(".modal").modal('show');
 		};
 	});
+
+	// app.filter('genderFilter', function() {
+	// 	return function (items, gender){
+	// 		var filtered = [];
+	// 		if (gender === "") {
+	// 			filtered = items;
+	// 		} else {
+	// 			for (var i = 0; i < items.length; i++) {
+	// 				if (gender !== "others") {
+	// 					if (items[i].gender == gender) {
+	// 						filtered[filtered.length] = items[i];
+	// 					}
+	// 				} else {
+	// 					if ((items[i].gender !==" male") && (items[i].gender !== "female")) {
+	// 						filtered[filtered.length] = items[i];
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 		return filtered;
+	// 	};
+	// });
 
 })();
