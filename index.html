@@ -24,7 +24,7 @@
 		<div class="row list">
 			<div class="hero" ng-repeat="people in swapi.peoples" ng-show="swapi.isSelected('{{people.gender}}')" ng-click="swapi.clickPeople($index)">
 				<p><strong>Name</strong> - {{people.name}}</p>
-				<!-- <img class="image__small" ng-src"{{people.image}}"> -->
+				<img class="image__small" ng-src="img/char/{{people.name}}.jpg" alt="{{people.name}}">
 				<p><strong>Gender</strong> - {{people.gender}}</p>
 			</div>
 			<swapi-people></swapi-people>

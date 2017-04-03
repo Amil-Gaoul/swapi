@@ -16,60 +16,40 @@
 	app.controller('SwapiController', function(httpq){
 		var swapi = this;
 
-		swapi.img = [];
-		swapi.count = 0;
+		var numberPage = 1;
 		swapi.arr  = [];
 		swapi.peoples = [];
-		function firstRequest() {
-			httpq.get('http://swapi.co/api/people/')
+
+		function firstRequest(numberPage) {
+			httpq.get('http://swapi.co/api/people/?page=' + numberPage)
 			.then(function(result) {
 				swapi.arr = result.data;
-				swapi.count = swapi.arr.count;
-				nextRequest(swapi.count);
+				swapi.peoples = swapi.peoples.concat(swapi.arr.results);
+				if (swapi.arr.next != null) {
+					numberPage++;
+					firstRequest(numberPage);
+				}
 			})
 			.catch(function() {
 				console.log("Error httpRequest");
 			});
 		}
 
-		firstRequest();
+		firstRequest(numberPage);
 
-		function nextRequest(count) {
+		function nextRequest(next) {
 			for (var i = 1; i < count; i++) {
-				httpq.get('http://swapi.co/api/people/' + i )
+				httpq.get(next)
 				.then(function(result) {
 					var people = result.data.name;
 					swapi.peoples.push(result.data);
 					//console.log(people);
-					imgPeople();
 				})
 				.catch(function() {
 					console.log("Error httpRequest");
 				});
 			}
 			//console.log(swapi.peoples);
-		}
-
-		function imgPeople() {
-			httpq.get('api/img.json')
-				.then(function(result) {
-					swapi.image = result.data;
-					//console.log(swapi.image[0]);
-					for (var i = 0; i < swapi.image.length; i++) {
-						for (var j = 0; j < swapi.peoples.length; j++) {
-							if (swapi.image[i].name === swapi.peoples[j].name) {
-								swapi.peoples[j].image = swapi.image[i].image;
-							}
-							// } else if (swapi.image[i].name !== swapi.peoples[j].name) {
-							// 	swapi.peoples[j].image = 'img/char/none.jpg';
-							// }
-						}
-
-					}
-				})
-				.catch(function() {
-					console.log("Error httpRequest");
-				});
 		}
 
 		swapi.tab = 'all';
@@ -84,7 +64,6 @@
 
 		swapi.clickPeople = function(ind) {
 			swapi.ind = ind;
-			//imgPeople(name);
 			console.log(ind);
 			$(".modal").modal('show');
 		};
