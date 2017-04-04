@@ -19,6 +19,7 @@
 		var numberPage = 1;
 		swapi.arr  = [];
 		swapi.peoples = [];
+		swapi.gender = '';
 
 		function firstRequest(numberPage) {
 			httpq.get('http://swapi.co/api/people/?page=' + numberPage)
@@ -52,8 +53,6 @@
 			//console.log(swapi.peoples);
 		}
 
-		swapi.gender = '';
-
 		swapi.setGender = function(gender) {
 			swapi.gender = gender;
 		};
@@ -76,23 +75,23 @@
 	app.filter('filter', function() {
 		return function (items, gender) {
 			//console.log(gender);
-			var filtered = [];
+			filter = [];
 			if (gender === "") {
-				filtered = items;
+				filter = items;
 			} else {
 				for (var i = 0; i < items.length; i++) {
 					if (gender !== "others") {
 						if (items[i].gender == gender) {
-							filtered[filtered.length] = items[i];
+							filter[filter.length] = items[i];
 						}
 					} else if (gender === "others") {
 						if ((items[i].gender !== "male") && (items[i].gender !== "female")) {
-							filtered[filtered.length] = items[i];
+							filter[filter.length] = items[i];
 						}
 					}
 				}
 			}
-			return filtered;
+			return filter;
 		};
 	});
 
