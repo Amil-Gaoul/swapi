@@ -25,14 +25,22 @@
 	display: inline-block;
 	width: 200px;
 	margin: 10px;
-	border: 1px solid lightgray;
+	border: 2px solid lightgray;
 	padding: 5px;
 	border-radius: 5px;
 }
 
 .hero:hover {
-	border: 1px solid #ed1b2f;
+	border: 2px solid #ed1b2f;
 	cursor: pointer;
+}
+
+.male {
+	border: 2px solid skyblue;
+}
+
+.female {
+	border: 2px solid green;
 }
 
 .table td {

@@ -20,6 +20,7 @@
 		swapi.arr  = [];
 		swapi.peoples = [];
 		swapi.gender = '';
+		var index = 0;
 
 		function Request(numberPage) {
 			httpq.get('http://swapi.co/api/people/?page=' + numberPage)
@@ -50,9 +51,14 @@
 		// 	return ((swapi.tab === 'all' && swapi.tab !== 'male' && swapi.tab !== 'female' && swapi.tab !== 'n/a') || (selected === swapi.tab))?true:false;
 		// };
 
-		swapi.clickPeople = function(index) {
-			swapi.index = index;
-			//console.log(ind);
+		swapi.clickPeople = function(name) {
+			for (var i = 0; i < swapi.peoples.length; i++) {
+				if (name === swapi.peoples[i].name) {
+					swapi.index = i;
+
+				}
+			}
+			console.log(swapi.index);
 			$(".modal").modal('show');
 		};
 	});

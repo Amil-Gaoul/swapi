@@ -21,7 +21,7 @@
 			<li ng-class='swapi.activeGender("others")'><a ng-click="swapi.setGender('others')" href>Others</a></li>
 		</ul>
 		<div class="row list">
-			<div class="hero" ng-repeat="people in swapi.peoples | filter:swapi.gender" ng-click="swapi.clickPeople($index)">
+			<div ng-repeat="people in swapi.peoples | filter:swapi.gender" class="hero {{people.gender}}" ng-click="swapi.clickPeople(people.name)">
 				<p><strong>Name</strong> - {{people.name}}</p>
 				<img class="image__small" ng-src="img/char/{{people.name}}.jpg" alt="{{people.name}}">
 				<p><strong>Gender</strong> - {{people.gender}}</p>
