@@ -1,0 +1,106 @@
+[
+	{
+		"name": "Luke Skywalker",
+		"image": "img/char/Luke.jpg"
+	},
+	{
+		"name": "Darth Vader",
+		"image": "img/char/Darth.jpg"
+	},
+	{
+		"name": "Owen Lars",
+		"image": "img/char/Owen.jpg"
+	},
+	{
+		"name": "Han Solo",
+		"image": "img/char/Han.jpg"
+	},
+	{
+		"name": "Obi-Wan Kenobi",
+		"image": "img/char/Obi-Wan.jpg"
+	},
+	{
+		"name": "Chewbacca",
+		"image": "img/char/Chewbacca.jpg"
+	},
+	{
+		"name": "Boba Fett",
+		"image": "img/char/Boba.jpg"
+	},
+	{
+		"name": "Leia Organa",
+		"image": "img/char/Leia.jpg"
+	},
+	{
+		"name": "Darth Maul",
+		"image": "img/char/DarthM/jpg"
+	},
+	{
+		"name": "Qui-Gon Jinn",
+		"image": "img/char/QuiGon.jpg"
+	},
+	{
+		"name": "C-3PO",
+		"image": "img/char/C-3PO.jpg"
+	},
+	{
+		"name": "R2-D2",
+		"image": "img/char/R2d2.jpg"
+	},
+	{
+		"name": "Beru Whitesun lars",
+		"image": "img/char/Beru.jpg"
+	},
+	{
+		"name": "Wilhuff Tarkin",
+		"image": "img/char/Tarkin.jpg"
+	},
+	{
+		"name": "Anakin Skywalker",
+		"image": "img/char/Anakin.jpg"
+	},
+	{
+		"name": "Yoda",
+		"image": "img/char/Yoda.jpg"
+	},
+	{
+		"name": "Palpatine",
+		"image": "img/char/Palpatine.jpg"
+	},
+	{
+		"name": "Lando Calrissian",
+		"image": "img/char/Lando.jpg"
+	},
+	{
+		"name": "Padmé Amidala",
+		"image": "img/char/Padme.jpg"
+	},
+	{
+		"name": "Jar Jar Binks",
+		"image": "img/char/JarJar.jpg"
+	},
+	{
+		"name": "Mace Windu",
+		"image": "img/char/Mace.jpg"
+	},
+	{
+		"name": "Jango Fett",
+		"image": "img/char/Jango.jpg"
+	},
+	{
+		"name": "Finn",
+		"image": "img/char/Finn.jpg"
+	},
+	{
+		"name": "Rey",
+		"image": "img/char/Rey.jpg"
+	},
+	{
+		"name": "Dooku",
+		"image": "img/char/Dooku.jpg"
+	},
+	{
+		"name": "Jabba Desilijic Tiure",
+		"image": "img/char/Jabba.jpg"
+	}
+]

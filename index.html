@@ -15,13 +15,13 @@
 	</div>
 	<div class="container wrapper" ng-controller="SwapiController as swapi">
 		<ul class="nav nav-pills center-pills">
-			<li ng-class='{active:swapi.tab==="all"}'><a ng-click="swapi.setGender('all')" href>All</a></li>
-			<li ng-class='{active:swapi.tab==="male"}'><a ng-click="swapi.setGender('male')" href>Male</a></li>
-			<li ng-class='{active:swapi.tab==="female"}'><a ng-click="swapi.setGender('female')" href>Female</a></li>
-			<li ng-class='{active:swapi.tab==="n/a"}'><a ng-click="swapi.setGender('n/a')" href>Others</a></li>
+			<li ng-class='swapi.activeGender("")'><a ng-click="swapi.setGender('')" href>All</a></li>
+			<li ng-class='swapi.activeGender("male")'><a ng-click="swapi.setGender('male')" href>Male</a></li>
+			<li ng-class='swapi.activeGender("female")'><a ng-click="swapi.setGender('female')" href>Female</a></li>
+			<li ng-class='swapi.activeGender("others")'><a ng-click="swapi.setGender('others')" href>Others</a></li>
 		</ul>
 		<div class="row list">
-			<div class="hero" ng-repeat="people in swapi.peoples" ng-show="swapi.isSelected('{{people.gender}}')" ng-click="swapi.clickPeople($index)">
+			<div class="hero" ng-repeat="people in swapi.peoples | filter:swapi.gender" ng-click="swapi.clickPeople($index)">
 				<p><strong>Name</strong> - {{people.name}}</p>
 				<img class="image__small" ng-src="img/char/{{people.name}}.jpg" alt="{{people.name}}">
 				<p><strong>Gender</strong> - {{people.gender}}</p>

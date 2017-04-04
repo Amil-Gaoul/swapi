@@ -10,7 +10,7 @@
 				.catch(deffered.resolve);
 				return deffered.promise;
 		}
-		}
+		};
 	});
 
 	app.controller('SwapiController', function(httpq){
@@ -52,52 +52,48 @@
 			//console.log(swapi.peoples);
 		}
 
-		swapi.tab = 'all';
+		swapi.gender = '';
 
-		// swapi.setGender = function(gender) {
-		// 		swapi.gender = getGender;
-		// 	}
-		// };
-
-		// swapi.isSelected = function(check){
-		// 	return store.gender === check?"active":"";
-		// };
-
-		swapi.setGender = function(setTab) {
-			swapi.tab = setTab;
+		swapi.setGender = function(gender) {
+			swapi.gender = gender;
 		};
 
-		swapi.isSelected = function(selected) {
-			return ((swapi.tab === 'all' && swapi.tab !== 'male' && swapi.tab !== 'female' && swapi.tab !== 'n/a') || (selected === swapi.tab))?true:false;
+		swapi.activeGender = function(check){
+			return swapi.gender === check?"active":"";
 		};
 
-		swapi.clickPeople = function(ind) {
-			swapi.ind = ind;
-			console.log(ind);
+		// swapi.isSelected = function(selected) {
+		// 	return ((swapi.tab === 'all' && swapi.tab !== 'male' && swapi.tab !== 'female' && swapi.tab !== 'n/a') || (selected === swapi.tab))?true:false;
+		// };
+
+		swapi.clickPeople = function(index) {
+			swapi.index = index;
+			//console.log(ind);
 			$(".modal").modal('show');
 		};
 	});
 
-	// app.filter('genderFilter', function() {
-	// 	return function (items, gender){
-	// 		var filtered = [];
-	// 		if (gender === "") {
-	// 			filtered = items;
-	// 		} else {
-	// 			for (var i = 0; i < items.length; i++) {
-	// 				if (gender !== "others") {
-	// 					if (items[i].gender == gender) {
-	// 						filtered[filtered.length] = items[i];
-	// 					}
-	// 				} else {
-	// 					if ((items[i].gender !==" male") && (items[i].gender !== "female")) {
-	// 						filtered[filtered.length] = items[i];
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 		return filtered;
-	// 	};
-	// });
+	app.filter('filter', function() {
+		return function (items, gender) {
+			//console.log(gender);
+			var filtered = [];
+			if (gender === "") {
+				filtered = items;
+			} else {
+				for (var i = 0; i < items.length; i++) {
+					if (gender !== "others") {
+						if (items[i].gender == gender) {
+							filtered[filtered.length] = items[i];
+						}
+					} else if (gender === "others") {
+						if ((items[i].gender !== "male") && (items[i].gender !== "female")) {
+							filtered[filtered.length] = items[i];
+						}
+					}
+				}
+			}
+			return filtered;
+		};
+	});
 
 })();
