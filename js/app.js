@@ -21,14 +21,14 @@
 		swapi.peoples = [];
 		swapi.gender = '';
 
-		function firstRequest(numberPage) {
+		function Request(numberPage) {
 			httpq.get('http://swapi.co/api/people/?page=' + numberPage)
 			.then(function(result) {
 				swapi.arr = result.data;
 				swapi.peoples = swapi.peoples.concat(swapi.arr.results);
 				if (swapi.arr.next != null) {
 					numberPage++;
-					firstRequest(numberPage);
+					Request(numberPage);
 				}
 			})
 			.catch(function() {
@@ -36,22 +36,7 @@
 			});
 		}
 
-		firstRequest(numberPage);
-
-		function nextRequest(next) {
-			for (var i = 1; i < count; i++) {
-				httpq.get(next)
-				.then(function(result) {
-					var people = result.data.name;
-					swapi.peoples.push(result.data);
-					//console.log(people);
-				})
-				.catch(function() {
-					console.log("Error httpRequest");
-				});
-			}
-			//console.log(swapi.peoples);
-		}
+		Request(numberPage);
 
 		swapi.setGender = function(gender) {
 			swapi.gender = gender;
