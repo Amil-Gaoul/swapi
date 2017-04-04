@@ -36,11 +36,11 @@
 }
 
 .male {
-	border: 2px solid skyblue;
+	color: blue;
 }
 
 .female {
-	border: 2px solid green;
+	color: green;
 }
 
 .table td {
