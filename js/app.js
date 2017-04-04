@@ -59,7 +59,7 @@
 		};
 
 		swapi.activeGender = function(check){
-			return swapi.gender === check?"active":"";
+			return swapi.gender === check ? "active" : "";
 		};
 
 		// swapi.isSelected = function(selected) {
