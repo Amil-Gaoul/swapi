@@ -24,7 +24,7 @@
 			<div ng-repeat="people in swapi.peoples | filter:swapi.gender" class="hero" ng-click="swapi.clickPeople(people.name)">
 				<p><strong>Name</strong> - {{people.name}}</p>
 				<img class="image__small" ng-src="img/char/{{people.name}}.jpg" alt="{{people.name}}">
-				<p class="{{people.gender}}"><strong>Gender</strong> - {{people.gender}}</p>
+				<p class="gender {{people.gender}}"><strong>Gender</strong> - {{people.gender}}<span class="gender_img {{people.gender}}_img"></span></p>
 			</div>
 			<swapi-people></swapi-people>
 		</div>

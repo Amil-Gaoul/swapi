@@ -35,11 +35,33 @@
 	cursor: pointer;
 }
 
+.gender_img {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-left: 2px;
+	background: url("../img/other.png") no-repeat;
+}
+
+.male_img {
+	background: url("../img/male.png") no-repeat;
+}
+
+.female_img {
+	background: url("../img/female.png") no-repeat;
+}
+
+.gender {
+	margin-top: 5px;
+}
+
 .male {
+	margin-top: 5px;
 	color: blue;
 }
 
 .female {
+	margin-top: 5px;
 	color: green;
 }
 
